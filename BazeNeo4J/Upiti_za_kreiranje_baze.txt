@@ -1,0 +1,47 @@
+CREATE (t:Teretana{id:'1',naziv:'Teretana1', lokacija:'Nemanjiceva 11', ocena:'0',opis:'nema',cena:'2500'})return t
+
+CREATE (t:Teretana{id:'2', naziv:'Teretana2', lokacija:'Nemanjiceva 14', ocena:'0',opis:'nema',cena:'2550'})return t
+
+CREATE (t:Trener{id:'1',ime:'Ivan',prezime:'Ilic', ocena:'4000'}) return t
+
+CREATE (t:Trener{id:'2',ime:'Milan',prezime:'Ilic', ocena:'5000'}) return t
+
+CREATE(k:Korisnik{id:'1',ime:'Milos', prezime:'Tosic',nivo:'0', kilogram:'67', visina:'180', bolesti:'nema', pol:'muski'})return k
+
+CREATE(k:Korisnik{id:'2',ime:'Milena', prezime:'Mitic',nivo:'0', kilogram:'67', visina:'180', bolesti:'nema', pol:'zenski'})return k
+
+CREATE (u:Usluga{id:'1',nazivusluge:'Fitnes'}) return u
+
+CREATE (u:Usluga{id:'2',nazivusluge:'Konsultacije'}) return u
+
+CREATE (u:Usluga{id:'3',nazivusluge:'Bodybuilding'}) return u
+
+MATCH (a:Korisnik),(b:Teretana)
+WHERE a.id = '1' AND b.id = '1'
+CREATE (a)-[r:CLAN]->(b)
+RETURN type(r)
+
+MATCH (a:Korisnik),(b:Teretana)
+WHERE a.id = '2' AND b.id = '2'
+CREATE (a)-[r:CLAN]->(b)
+RETURN type(r)
+
+MATCH (t:Trener {ime: "Ivan"}), (i:Teretana {naziv: "Teretana1"}) WITH t, i CREATE (t)-[:RADI_U]->(i)
+
+MATCH (t:Trener {ime: "Milan"}), (i:Teretana {naziv: "Teretana2"}) WITH t, i CREATE (t)-[:RADI_U]->(i)
+
+MATCH (t:Teretana {naziv: "Teretana1"}), (u:Usluga {nazivusluge: "Fitnes"}) WITH t, u CREATE (t)-[:NUDI_USLUGU]->(u)
+
+MATCH (t:Teretana {naziv: "Teretana1"}), (u:Usluga {nazivusluge: "Konsultacije"}) WITH t, u CREATE (t)-[:NUDI_USLUGU]->(u)
+
+MATCH (t:Teretana {naziv: "Teretana2"}), (u:Usluga {nazivusluge: "Bodybuilding"}) WITH t, u CREATE (t)-[:NUDI_USLUGU]->(u)
+
+MATCH (t:Trener {ime: "Ivan"}), (k:Korisnik {ime: "Milos"}) WITH t, k CREATE (t)-[:PREPORUCUJE_PLAN {parametar:'Smrsaj'}]->(k) return t
+
+MATCH (t:Trener {ime: "Milan"}), (k:Korisnik {ime: "Milena"}) WITH t, k CREATE (t)-[:PREPORUCUJE_PLAN {parametar:'Jedi zdravo'}]->(k) return t
+
+MATCH (k:Korisnik {ime: "Milos"}), (u:Usluga {nazivusluge: "Fitnes"}) WITH k, u CREATE (k)-[:KORISTI]->(u)
+
+MATCH (k:Korisnik {ime: "Milena"}), (u:Usluga {nazivusluge: "Bodybuilding"}) WITH k, u CREATE (k)-[:KORISTI]->(u)
+
+MATCH(t: Trener { id: '1' })-[r] - (k: Korisnik { id: '1' } ) WHERE EXISTS(r.opisplana) RETURN r.opisplana

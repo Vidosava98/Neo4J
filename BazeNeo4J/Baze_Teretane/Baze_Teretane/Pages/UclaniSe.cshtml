@@ -1,0 +1,50 @@
+﻿@page
+@model Baze_Teretane.Pages.UclaniSeModel
+@{
+    ViewData["Title"] = "UclaniSe";
+}
+
+    <form method="post">
+        <div>Ime:</div>
+        <input type="text" asp-for="@Model.NoviKorisnik.ime" />
+        <div>Prezime:</div>
+        <input type="text" asp-for="@Model.NoviKorisnik.prezime" />
+        <div>Pol:</div>
+        <input type="text" asp-for="@Model.NoviKorisnik.pol" />
+        <div>Kilogrami:</div>
+        <input type="text" asp-for="@Model.NoviKorisnik.kilogram" />
+        <div>Visina:</div>
+        <input type="text" asp-for="@Model.NoviKorisnik.visina" />
+        <div>Da li ste ranije trenirali:</div>
+        <select asp-for="@Model.NoviKorisnik.nivo">
+            <option value="0">Nisam nikada trenirao/la</option>
+            <option value="1">Umereno sam trenirao/la</option>
+            <option value="3">Redovno sam trenirao/la</option>
+        </select>
+        <div>Unesite trenera sa kojim zelite da radite :</div>
+        <select asp-for="@Model.idTrenera">
+            @foreach (Trener u in Model.SviTreneri)
+            {
+                <option value="@u.id">@u.ime  @u.prezime</option>
+            }
+        </select>
+        <div>Unesite koju uslugu zelite</div>
+        <select asp-for="@Model.idUsluge">
+            @foreach (Usluga u in Model.SveUsluge)
+            {
+                <option value="@u.id">@u.nazivusluge</option>
+            }
+        </select>
+        <div>Ovde unesite ukoliko imate neku hronicnu bolest:</div>
+        <input type="text" asp-for="@Model.NoviKorisnik.bolesti" />
+        <input type="submit" value="Uclani se" asp-page-handler="Uclani" asp-route-id="@Model.IdTeretane" />
+        @if (Model.uspesno)
+        {
+            <div>
+                Uskoro cete dobiti povratne informacije o programu treninga koji Vam izabrani trener preporucuje!
+                Vas id kojim mozete pristupiti planu je: @Model.NoviKorisnik.id
+            </div>
+            <input type="submit" value="Nazad" asp-page="./Korisnik" />
+        }
+    </form>
+

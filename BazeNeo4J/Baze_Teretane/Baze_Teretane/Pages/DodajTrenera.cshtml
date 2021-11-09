@@ -1,0 +1,23 @@
+﻿@page
+@model Baze_Teretane.Pages.DodajTreneraModel
+@{
+    ViewData["Title"] = "DodajTrenera";
+}
+
+<form method="post">
+    <div>Unesi ime Trenera:</div>
+    <input type="text" asp-for="@Model.NoviTrener.ime" />
+    <div>Unesite prezime trenera:</div>
+    <input type="text" asp-for="@Model.NoviTrener.prezime" />
+    <div>Unesite pocetnu ocenu trenra:</div>
+    <input type="text" asp-for="@Model.NoviTrener.ocena" />
+    <br />
+    <div>
+        Dodaj id teretane u kojoj ovaj trener radi.
+        <input type="text" asp-for="@Model.teretana.id" />
+        <input type="submit" value="Dodaj" asp-page-handler="DodajTreneraTeretani" />
+        </div>
+        <br />
+
+        <input type="submit" value="Dodaj Teretanu sa unetim podacima" asp-page-handler="Dodaj" />
+    </form>

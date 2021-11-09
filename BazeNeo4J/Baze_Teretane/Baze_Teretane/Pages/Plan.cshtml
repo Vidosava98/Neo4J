@@ -1,0 +1,12 @@
+﻿@page
+@model Baze_Teretane.Pages.PlanModel
+@{
+    ViewData["Title"] = "Plan";
+}
+
+<form method="post">
+    <div>Unesite plan za korisnika</div>
+    <input type="text" asp-for="@Model.Preporuka" />
+    <input type="submit" value="Posalji" asp-page-handler="Posalji" asp-route-id="@Model.korisnik.id" asp-route-trenerid="@Model.trener.id"/>
+</form>
+

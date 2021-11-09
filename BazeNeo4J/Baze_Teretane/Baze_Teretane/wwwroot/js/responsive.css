@@ -1,0 +1,236 @@
+/*responsive*/
+
+
+@media screen and (min-width: 800px) and (max-width: 1280px)
+{
+.food-nav .navbar .navbar-nav .nav-item a 
+{
+    font-size: 14px;
+    margin-left: 8px;
+    margin-right: 8px;
+	color:#222222;
+}
+.row {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.row .row {
+  padding: 0; 
+}
+}
+@media screen and (min-width: 1024px) and (max-width: 1366px)
+{
+.header-area .navbar-brand .logolight
+{
+    display: none;
+}
+.header-area .navbar-brand .logodark
+{
+    display: block;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px)
+{
+.row 
+{
+    padding-left: 10px;
+	padding-right: 10px;
+}
+.food-responsive-menu img
+{
+	max-width:300px;
+	width:100%;
+}
+.header-area {
+    position: relative;
+    background: #fff;
+    z-index: 99;
+}
+.menu_open {
+    color: #222;
+}
+.food-responsive-nav .food-responsive-menu {
+    width: 100%;
+}
+.navbar-area.is-sticky {
+    transition: none;
+    transform: none;
+	top: 0;
+}
+.food-responsive-menu img {
+    max-width: 130px;
+    width: 100%;
+}
+#about .col-sm-4, #about .col-sm-8
+{
+	float: left;
+}
+#services {
+    background-size: cover;
+}
+#services .services_text
+{
+    margin-bottom: 20px;
+}
+#gallery .col-sm-4 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.form-control {
+    padding: 10px 15px;
+    min-height: 45px;
+}
+#contact .col-sm-4 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+}
+
+@media screen and (min-width: 320px) and (max-width: 992px)
+{
+.navbar-area.is-sticky {
+    -webkit-animation: none;
+    animation: none;
+}
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px)
+{
+.row 
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.food-responsive-menu img
+{
+    width: 100%;
+	margin-left: 10px;
+}
+#about.about_section h2 {
+    font-size: 28px;
+}
+#about.about_section h3 {
+    font-size: 20px;
+}
+#about.about_section h2.about_contact {
+    font-size: 28px;
+}
+#about.about_section .row
+{
+    display: -webkit-box;
+    display: -ms-inline-block;
+    display: inline-block;
+}
+#about.about_section .about_text
+{
+    margin-bottom: 30px;
+}
+.menu_open {
+    font-size: 16px;
+}
+.heading_wrapper h2 {
+    font-size: 28px;
+}
+.heading_wrapper p {
+    line-height: 20px;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+html body .owl-carousel .owl-buttons .owl-prev, html body .owl-carousel .owl-buttons .owl-next {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+#menu.products_section .product-thumb {
+    min-height: 400px;
+}
+.food-responsive-menu img
+{
+	max-width:300px;
+	width:100%;
+}
+.header-area {
+    position: relative;
+    background: #fff;
+    z-index: 99;
+}
+.menu_open {
+    color: #222;
+}
+.food-responsive-nav .food-responsive-menu {
+    width: 100%;
+}
+.navbar-area.is-sticky {
+    transition: none;
+    transform: none;
+	top: 0;
+}
+.food-responsive-menu img {
+    max-width: 130px;
+    width: 100%;
+}
+#about .col-sm-4, #about .col-sm-8
+{
+	float: left;
+}
+#services {
+    background-size: cover;
+}
+#services .services_text
+{
+    margin-bottom: 20px;
+}
+#gallery .col-sm-4 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.form-control {
+    padding: 10px 15px;
+    min-height: 45px;
+}
+#contact .col-sm-4 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+#book_table .book_table_images img {
+    margin-bottom: 30px;
+}
+#book_table .heading_wrapper h4 {
+    line-height: 28px;
+}
+section {
+    padding: 50px 0px;
+}
+.gallery figcaption p {
+    display: none;
+}
+.gallery figcaption h2 {
+    font-size: 15px;
+}
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px)
+{
+.food-responsive-menu .option-item .btn
+{
+	display:none;
+}
+.food-responsive-nav .others-option {
+    width: 40%;
+}
+#about.about_section h2 {
+    font-size: 18px;
+}
+#mySidenav ul {
+	max-height: 350px;
+    overflow: auto;
+}
+
+}

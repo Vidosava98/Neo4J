@@ -1,0 +1,42 @@
+﻿@page
+@model Baze_Teretane.Pages.PrikazTeretaneModel
+@{
+    ViewData["Title"] = "PrikazTeretane";
+}
+
+    <form method="post">
+        <input type="submit" value="Vec sam clan ove teretane" asp-page="./JesamClan" asp-route-terr="@Model.ter.id" />
+       
+        <div>
+            <div class="font-weight-bold">Teretana @Model.ter.naziv</div>
+            <br />
+            <div>Unesite ocenu za teretanu:</div><input type="text" asp-for="@Model.teretanaOcena.ocena" />
+            <input type="submit" value="Oceni" asp-page-handler="OceniTeretanu" asp-route-id="@Model.ter.id" />
+        </div>
+        <br />
+        <br />
+        <div class="font-weight-bolder">Svi treneri: </div>
+        @foreach (Trener k in @Model.SviTreneri)
+        {
+            <div>@k.ime @k.prezime @k.ocena</div>
+            <br />
+            <div>Unesite ocenu za trenera:</div><input type="text" asp-for="@Model.trenerOcena.ocena" />
+            <input type="submit" value="Oceni" asp-page-handler="OceniTrenera" asp-route-id="@k.id" />
+        }
+        <br />
+        <br />
+        <div class="font-weight-bolder">Sve usluge: </div>
+        @foreach (Usluga a in @Model.SveUsluge)
+        {
+
+            <div>@a.nazivusluge</div>
+        }
+        <br />
+        <br />
+        <input type="submit" value="Zelim da se uclanim u ovu teretanu" asp-page="./UclaniSe" asp-route-id="@Model.ter.id" />
+      
+
+    
+        
+
+    </form>

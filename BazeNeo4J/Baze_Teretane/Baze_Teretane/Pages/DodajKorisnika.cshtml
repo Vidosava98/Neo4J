@@ -1,0 +1,22 @@
+﻿@page
+@model Baze_Teretane.Pages.DodajKorisnikaModel
+@{
+}
+<form method="post">
+    <div>Unesi ime:</div>
+    <input type="text" asp-for="@Model.NoviKorisnik.ime" />
+    <div>Unesi prezime:</div>
+    <input type="text" asp-for="@Model.NoviKorisnik.prezime" />
+    <div>Unesi nivo:</div>
+    <input type="text" asp-for="@Model.NoviKorisnik.nivo" />
+    <div>Unesi kilograme:</div>
+    <input type="text" asp-for="@Model.NoviKorisnik.kilogram" />
+    <div>Unesi visinu:</div>
+    <input type="text" asp-for="@Model.NoviKorisnik.visina" />
+    <div>Unesi bolesti:</div>
+    <input type="text" asp-for="@Model.NoviKorisnik.bolesti" />
+    <div>Unesi pol:</div>
+    <input type="text" asp-for="@Model.NoviKorisnik.pol" />
+
+    <input type="submit" value="Dodaj Korisnika sa unetim podacima" asp-page-handler="Dodaj" />
+</form>

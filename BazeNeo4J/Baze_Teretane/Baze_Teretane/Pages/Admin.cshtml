@@ -1,0 +1,62 @@
+﻿@page
+@model Baze_Teretane.Pages.AdminModel
+@{
+}
+
+<form method="post">
+    <div class="list-group-horizontal">
+        <div>
+            <div class="font-weight-bold">Teretana</div>
+            <br />
+            <div><input type="submit" value="Dodaj teretanu" asp-page="./DodajTeretanu" /></div>
+            <br />
+            <div>
+                Unesite id teretane koju zelite da obrisete: <input type="text" asp-for="@Model.teretana.id" />
+                <input type="submit" value="Obrisi teretanu" asp-page-handler="ObrisiTeretanu" />
+            </div>
+            <br />
+            <div>
+                <div>Unesite id teretane ciji naziv zelite da izmenite: <input type="text" asp-for="@Model.teretanaIzmena.id" /></div>
+                Unesite novi naziv teretane: <input type="text" asp-for="@Model.teretanaIzmena.naziv" />
+                <input type="submit" value="Izmeni teretanu" asp-page-handler="IzmeniTeretanu" />
+            </div>
+            <br />
+        </div>
+        <br />
+        <div>
+            <div class="font-weight-bold">Trener</div>
+            <br />
+            <div><input type="submit" value="Dodaj trenera" asp-page="./DodajTrenera" /></div>
+            <br />
+            <div>
+                Unesite id trenera koga zelite da obrisete: <input type="text" asp-for="@Model.trener.id" />
+                <input type="submit" value="Obrisi trenera" asp-page-handler="ObrisiTrenera" />
+            </div>
+            <br />
+            <div>
+                <div>Unesite id trenera ciju ocenu zelite da izmenite: <input type="text" asp-for="@Model.trenerIzmena.id" /></div>
+                Unesite ocenu: <input type="text" asp-for="@Model.trenerIzmena.ocena" />
+                <input type="submit" value="Izmeni trenera" asp-page-handler="IzmeniTrenera" />
+            </div>
+            <br />
+        </div>
+        <br />
+        <div>
+            <div class="font-weight-bold">Korisnik</div>
+            <br />
+            <div><input type="submit" value="Dodaj korisnika" asp-page="./DodajKorisnika" /></div>
+            <br />
+            <div>
+                Unesite id korisnika koga zelite da obrisete: <input type="text" asp-for="@Model.korisnik.id" />
+                <input type="submit" value="Obrisi korisnika" asp-page-handler="ObrisiKorisnika" />
+            </div>
+            <br />
+            <div>
+                <div>Unesite id korisnika cije kilograme zelite da izmenite: <input type="text" asp-for="@Model.korisnikIzmena.id" /></div>
+                Unesite kg: <input type="text" asp-for="@Model.korisnikIzmena.kilogram" />
+                <input type="submit" value="Izmeni korisnika" asp-page-handler="IzmeniKorisnika" />
+            </div>
+            <br />
+        </div>
+    </div>
+</form>

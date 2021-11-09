@@ -1,0 +1,20 @@
+﻿@page
+@model Baze_Teretane.Pages.DodajTeretanuModel
+@{
+    ViewData["Title"] = "DodajTeretanu";
+}
+
+<form method="post">
+    <div>Naziv:</div>
+    <input type="text" asp-for="@Model.NovaTeretana.naziv" />
+    <div>Lokacija teretane:</div>
+    <input type="text" asp-for="@Model.NovaTeretana.lokacija" />
+    <div>Opis teretane:</div>
+    <input type="text" asp-for="@Model.NovaTeretana.opis" />
+    <div>Cena:</div>
+    <input type="text" asp-for="@Model.NovaTeretana.cena" />
+    <div>Ocena:</div>
+    <input type="text" asp-for="@Model.NovaTeretana.ocena" />
+
+    <input type="submit" value="Dodaj Teretanu sa unetim podacima" asp-page-handler="Dodaj" />
+</form>
